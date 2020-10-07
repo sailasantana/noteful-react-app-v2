@@ -27,11 +27,11 @@ handleSubmit= e => {
 
     }
 
-    fetch(`${Endpoint.ApiEndpoint/notes}`,{
+    fetch(`${Endpoint.ApiEndpoint}/notes`,{
         headers:{
             'content-type': 'application/json'
         },
-        method: POST
+        method: "POST"
     })
     .then(response => {
         if(!response.ok) {

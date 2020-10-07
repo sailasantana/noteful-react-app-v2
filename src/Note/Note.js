@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 
 import { Link } from 'react-router-dom';
-import { format } from 'date-fns';
+//import { format } from 'date-fns';
 
 
 export default class Note extends React.Component{
@@ -22,7 +22,7 @@ export default class Note extends React.Component{
 
     //we'll delete this id with fetch method : delete
     fetch (`${Endpoint.ApiEndpoint}/notes/${noteId}` , {
-     method: DELETE,
+     method: "DELETE",
      //copy/pasted from syllabus instructions
      headers: {
          'context-type': 'application/json'
@@ -43,6 +43,10 @@ export default class Note extends React.Component{
 
         const {name, id , modified} = this.props
 
+        //<div className="modified">
+                   //Modified : {format(modified, 'Do MMM YYYY')}
+               //</div>
+
         return (
             <div className = "Note">
                <h2 className= "title">
@@ -53,9 +57,7 @@ export default class Note extends React.Component{
                <button className= "deleteButton" type="button" onClick={this.handleDelete}>
                  Delete 
                </button>
-               <div className="modified">
-                   Modified : {format(modified, 'Do MMM YYYY')}
-               </div>
+               
             </div>
 
 

@@ -3,7 +3,7 @@ import './App.css';
 
 import {Route, Link} from 'react-router-dom'
 import ListMain from '../ListMain/ListMain'
-import ListNav from '../Listnav/ListNav'
+import ListNav from '../ListNav/ListNav'
 import AddFolder from '../Add/AddFolder'
 import AddNote from '../Add/AddNote'
 import Note from '../Note/Note'
@@ -26,8 +26,8 @@ export default class App extends React.Component{
 
   componentDidMount() {
     Promise.all([
-      fetch(`${config.API_ENDPOINT}/notes`),
-      fetch(`${config.API_ENDPOINT}/folders`)
+      fetch(`${Endpoint.ApiEndpoint}/notes`),
+      fetch(`${Endpoint.ApiEndpoint}/folders`)
     ])
       .then(([notesRes, foldersRes]) => {
         if (!notesRes.ok)
@@ -41,6 +41,8 @@ export default class App extends React.Component{
         ])
       })
       .then(([notes, folders]) => {
+        console.log(notes)
+        console.log(folders)
         this.setState({ notes, folders })
       })
       .catch(error => {
@@ -107,12 +109,12 @@ export default class App extends React.Component{
             exact
             key={path}
             path={path}
-            component={NoteListMain}
+            component={ListMain}
           />
         )}
         <Route
           path='/note/:noteId'
-          component={NotePageMain}
+          component={MainPage}
         />
         <Route
           path='/add-folder'

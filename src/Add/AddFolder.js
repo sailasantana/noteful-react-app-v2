@@ -1,12 +1,12 @@
 import React from 'react';
-import NotefulContext from '../NotefulContext';
+import NoteContext from '../NoteContext';
 import Endpoint from '../endpoint';
 
 
 export default class AddFolder extends React.Component{
 
 
-    static contextType = NotefulContext
+    static contextType = NoteContext
 
     static defaultProps = {
         history : {
@@ -21,9 +21,9 @@ export default class AddFolder extends React.Component{
             name: e.target['folder-name'].val()
         }
 
-        fetch(`${Endpoint.ApiEndpoint/folder}`,
+        fetch(`${Endpoint.ApiEndpoint}/folder`,
         {
-        method: POST,
+        method: "POST",
         headers: {
             'content-type': 'application/json'    
         }
@@ -37,6 +37,7 @@ export default class AddFolder extends React.Component{
         })
         .then (folder => {
             this.context.addFolder(folder)
+            //you could also redirect to home
             this.props.history.push(`/folders/${folder.id}`)
         })
         .catch(err =>

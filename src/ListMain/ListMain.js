@@ -15,14 +15,23 @@ export default class ListMain extends React.Component{
     }
 
     render(){
-        const { folderId } = this.props.match.params
-        const { notes=[] } = this.context
-        const notesForFolder = findNotesForFolder(notes=[], folderId)
+        let { folderId } = this.props.match.params
+        let { notes=[] } = this.context
+        console.log(notes,'notes')
+        let notesForFolder = findNotesForFolder(notes, folderId)
+        //console.log(this.props.match.params,'folderId')
+        //console.log(this.context,'notes')
             
+        //console.log(notesForFolder,'note')
+
+        //console.log(notes)
+        //console.log(folderId)
+
         return(
             <div className = 'ListMain'>
                 <ul class>
-                    {notesForFolder.map(note => 
+                    
+                    {notesForFolder.map(note =>
                         <li key={note.id}>
                             <Note
                             id = {note.id}

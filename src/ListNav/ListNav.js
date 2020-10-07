@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 
 export default class NoteListNav extends React.Component {
-  static contextType = NotefulContext;
+  static contextType = NoteContext;
 
   render() {
     const { folders=[], notes=[] } = this.context

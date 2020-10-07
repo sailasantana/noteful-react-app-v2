@@ -29,7 +29,7 @@ export default class ListMain extends React.Component{
 
         return(
             <div className = 'ListMain'>
-                <ul class>
+                <ul>
                     
                     {notesForFolder.map(note =>
                         <li key={note.id}>

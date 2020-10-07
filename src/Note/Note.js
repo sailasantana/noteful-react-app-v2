@@ -42,6 +42,7 @@ export default class Note extends React.Component{
         //at the top
 
         const {name, id , modified} = this.props
+        
 
         //<div className="modified">
                    //Modified : {format(modified, 'Do MMM YYYY')}

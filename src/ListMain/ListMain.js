@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import NoteContext from '../NoteContext';
 import { findFolder, findNote, findNotesForFolder} from '../HelperFuncs';
 import Note from '../Note/Note'
+import AddNote from '../Add/AddNote';
 
 export default class ListMain extends React.Component{
    
@@ -13,6 +14,10 @@ export default class ListMain extends React.Component{
             params : {}
         }
     }
+
+    //handleAdd= e => {
+
+    //return <AddNote /> }
 
     render(){
         let { folderId } = this.props.match.params

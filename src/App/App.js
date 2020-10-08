@@ -41,8 +41,8 @@ export default class App extends React.Component{
         ])
       })
       .then(([notes, folders]) => {
-        console.log(notes)
-        console.log(folders)
+        //console.log(notes)
+        //console.log(folders)
         this.setState({ notes, folders })
       })
       .catch(error => {

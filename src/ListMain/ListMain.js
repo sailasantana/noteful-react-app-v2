@@ -45,9 +45,7 @@ export default class ListMain extends React.Component{
                         </li>)}
                 </ul>
                 <div className="AddANoteForm">
-                    <button tag={Link} to='./add-note' type='button' className='button'>
-                        Add A Note
-                    </button>
+                    <Link to='./add-note'> Add Note </Link>
                 </div>
             </div>
             

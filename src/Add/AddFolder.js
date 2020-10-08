@@ -18,7 +18,7 @@ export default class AddFolder extends React.Component{
         e.preventDefault();
 
         const folder = {
-            name: e.target['folder-name'].val()
+            name: e.target['folder-name'].value
         }
 
         fetch(`${Endpoint.ApiEndpoint}/folder`,

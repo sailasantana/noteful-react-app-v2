@@ -60,12 +60,12 @@ export default class App extends React.Component{
     //})
   //}
 
-  //handleAddNote = note => {
-    //this.setState({
-      //notes: [
-        //...this.state.notes,
-        //note
-      //]})}
+  handleAddNote = note => {
+    this.setState({
+      notes: [
+        ...this.state.notes,
+        note
+      ]})}
 
   //handleDeleteNote = noteId => {
     //this.setState({
@@ -131,7 +131,9 @@ export default class App extends React.Component{
   render(){
     const contextValues = {
       folders : this.state.folders,
-      notes : this.state.notes
+      notes : this.state.notes,
+      deleteNote: this.deleteNote,
+      addNote: this.handleAddNote
 
     };
     return (

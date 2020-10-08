@@ -20,8 +20,8 @@ handleSubmit= e => {
     //preventDefault since we're dealing with a form
     e.preventDefault()
     
-    const newNote ={
-        name: e.target['note-name'].value,
+    const note ={
+        name: e.target['note-title'].value,
         content: e.target['note-content'].value,
         folder: e.target['note-folder-id'].value
 
@@ -44,7 +44,8 @@ handleSubmit= e => {
         this.props.history.push(`/folder/${note.folderId}`)
     })
     .catch(err => {
-        alert({err})
+        console.log(err)
+        alert(err)
     })
 
 
@@ -61,8 +62,8 @@ render(){
               <h2>Add New Note</h2>
               <form onSubmit = {this.handleSubmit}>
                <div>
-               <label>Name</label>
-                <input type='text' name='note-title'>Title</input>   
+               <label>Title</label>
+                <input type='text' name='note-title'/>  
                </div>  
                <div> 
                 <label>Content</label>

@@ -2,7 +2,7 @@ import React from 'react';
 import NoteContext from '../NoteContext'
 import Endpoint from '../endpoint'
 import { findFolder, findNote, findNotesForFolder} from '../HelperFuncs'
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 
 
@@ -30,7 +30,8 @@ export default class Note extends React.Component{
     })
     //.then not required. DELETE method does not return a response. 
     .catch(err => {
-        alert({err})
+        console.log(err,"delete fetch")
+        alert(err)
     })
 
    }
@@ -70,11 +71,11 @@ export default class Note extends React.Component{
 
 }
 
-Note.propTypes = {
-    id: PropTypes.number,
-    name:PropTypes.string,
-    modified:PropTypes.string
-  };
+//Note.propTypes = {
+    //id: PropTypes.number,
+    //name:PropTypes.string,
+    //modified:PropTypes.string
+  //};
 
 
 
